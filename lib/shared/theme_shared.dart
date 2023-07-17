@@ -1,15 +1,21 @@
 part of 'shared.dart';
 
-Color primaryColor = const Color.fromRGBO(82, 175, 166, 100);
+Color primaryColor = Color.fromARGB(255, 82, 175, 166);
 Color blackColor = const Color(0xff050522);
 Color dengerColor = const Color(0xff5C5D61);
 Color whiteColor = Colors.white;
+Color grey6Color = const Color(0xffF2F2F2);
+Color grey3Color = const Color(0xff828282);
+Color diffColor = Color.fromARGB(255, 31, 47, 53);
 
-TextStyle blackTextStyle = GoogleFonts.inter(
-    fontSize: 36, color: blackColor, fontWeight: FontWeight.w500);
-TextStyle dengerTextStyle = GoogleFonts.inter(
-    fontSize: 36, color: dengerColor, fontWeight: FontWeight.w500);
-TextStyle whiteTextStyle = GoogleFonts.inter(
-    fontSize: 36, color: whiteColor, fontWeight: FontWeight.w500);
-TextStyle primaryTextStyle = GoogleFonts.inter(
-    fontSize: 36, color: primaryColor, fontWeight: FontWeight.w500);
+TextStyle largeTextStyle = GoogleFonts.nunito()
+    .copyWith(fontSize: 24, fontWeight: FontWeight.w600, letterSpacing: 1);
+
+TextStyle mediumTextStyle = GoogleFonts.nunito()
+    .copyWith(fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: 0.5);
+
+TextStyle smallTextStyle = GoogleFonts.nunito()
+    .copyWith(fontSize: 13, fontWeight: FontWeight.w500, letterSpacing: 0.5);
+
+TextStyle buttonTextStyle = GoogleFonts.nunito()
+    .copyWith(fontSize: 18, fontWeight: FontWeight.w700, letterSpacing: 0.5);

@@ -5,7 +5,7 @@ class DataProfile {
 
   final String? status;
   final String? message;
-  final Data? data;
+  final ProfileData? data;
 
   factory DataProfile.fromRawJson(String str) =>
       DataProfile.fromJson(json.decode(str));
@@ -15,7 +15,7 @@ class DataProfile {
   factory DataProfile.fromJson(Map<String, dynamic> json) => DataProfile(
         status: json["status"],
         message: json["message"],
-        data: json["data"] == null ? null : Data.fromJson(json["data"]),
+        data: json["data"] == null ? null : ProfileData.fromJson(json["data"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -25,10 +25,11 @@ class DataProfile {
       };
 }
 
-class Data {
-  Data({
-    this.id,
+class ProfileData {
+  ProfileData({
+    this.userId,
     this.name,
+    this.role,
     this.email,
     this.picture,
     this.address,
@@ -36,21 +37,24 @@ class Data {
     this.updatedAt,
   });
 
-  final String? id;
+  final String? userId;
   final String? name;
+  final String? role;
   final String? email;
   final String? picture;
   final String? address;
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  factory Data.fromRawJson(String str) => Data.fromJson(json.decode(str));
+  factory ProfileData.fromRawJson(String str) =>
+      ProfileData.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
-        id: json["id"],
+  factory ProfileData.fromJson(Map<String, dynamic> json) => ProfileData(
+        userId: json["user_id"],
         name: json["name"],
+        role: json["role"],
         email: json["email"],
         picture: json["picture"],
         address: json["address"],
@@ -63,8 +67,9 @@ class Data {
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
+        "user_id": userId,
         "name": name,
+        "role": role,
         "email": email,
         "picture": picture,
         "address": address,
